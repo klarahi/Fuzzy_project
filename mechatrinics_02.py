@@ -11,6 +11,7 @@ Created on Tue Mar  1 13:09:30 2022
 #import os  #early termination
 import serial
 import time
+import voice_recognition
 
 def file_to_listing(filepath):
     '''
@@ -48,7 +49,7 @@ def file_to_listing(filepath):
 
     return boxes
     
-def asking_for_part(boxes):
+def showing_parts(boxes):
     '''
     Parameters : boxes, TYPE = dictionary, with all box names and cooerdinates
     rints all keys from dictionary, ask you to choose one of them
@@ -67,10 +68,10 @@ def asking_for_part(boxes):
     for name in boxes_names:
         print(*name)
     #takes inn part looked for
-    part_desired = input("Write the part you are looking for from the list above: ")
+    return
 
+def finding_coordinates(part_desired, boxes):
     #gets the coordinatestring from the desired part
-    #BUG: prints not found even though is is found
     part_desired = part_desired.lower()
     found = 0
     for thing in range(len(boxes)):
@@ -96,8 +97,13 @@ def coordinates_to_arduino(coordinates):
 
 if __name__ == "__main__":
     boxes = file_to_listing("C:\\Users\\klmh\\OneDrive\\Dokumente\\NTNU\\TMM4245_Fuzzy_Front_End\\shelfB.txt")
-    part = asking_for_part(boxes)
-    coordinates_to_arduino(part)
+    showing_parts(boxes)
+    #part = input("Write the part you are looking for from the list above: ")
+    print("What part are you looking for?")
+    part = Speech_to_text()
+    part_coordinates = finding_coordinates(part, boxes)
+    coordinates_to_arduino(part_coordinates)
+
     
     
 
