@@ -1,0 +1,17 @@
+x,y,r
+70,61,90 - conectors
+65,60,90 - hall effect
+59,64,90 - slidable
+54,59,90 - potentiometer
+54,59,90 - SD data logger
+59,58,90 - wireless communication
+66,57,90 - RFID tags
+72,54,90 - alligator clamps
+71,49,90 - buttons
+65,54,90 - connector pins
+58,56,90 - screws
+52,56,90 - color sensors
+53,46,90 - strain gauge
+61,47,90 - USB splitter and extension
+69,49,90 - joystick
+68,45,90 - thermal grease

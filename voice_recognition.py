@@ -22,7 +22,7 @@ def Speech_to_text():
  ##
     print("recording start")
     fs = 44100  # Sample rate
-    seconds = 2  # Duration of recording
+    seconds = 4  # Duration of recording
 
     sd.default.dtype='int32', 'int32'
 
