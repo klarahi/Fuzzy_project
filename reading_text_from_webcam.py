@@ -20,14 +20,14 @@ if __name__ == "__main__":
         _,image = camera.read()
         cv2.imshow('Text detection', image)
         if cv2.waitKey(1) & 0xFF==ord('s'):
-            cv2.imwrite('test_1.jpg', image)
+            cv2.imwrite('test_text_by_webcam.jpg', image)
             break
     camera.release()
     cv2.destroyAllWindows()
 
     def tesseract():
         path_to_tesseract = r"C:\Program Files\Tesseract-OCR\tesseract.exe"
-        image_path = 'test_1.jpg'
+        image_path = 'test_text_by_webcam.jpg'
         pytesseract.tesseract_cmd = path_to_tesseract
         text = pytesseract.image_to_string(Image.open(image_path))
         print(text[:-1])
