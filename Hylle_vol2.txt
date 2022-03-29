@@ -1,0 +1,17 @@
+x,y,r
+74,64,90-conectors
+69,64,90-hall effect
+63,64,90-slidable
+54,64,90-potentiometer
+54,61,90-SD data logger
+60,60,90-wireless communication
+66,60,90-RFID tags
+72,61,90-alligator clamps
+71,55,90-buttons
+65,55,90-connector pins
+59,55,90-screws
+54,55,90-color sensors
+54,53,90-strain gauge
+63,53,90-USB splitter and extension
+72,52,90-joystick
+68,45,90-thermal grease

@@ -100,17 +100,18 @@ def asking_for_part(boxes: list) -> str:
 def coordinates_to_arduino(coordinates: str) -> None:
     # opens the connection to ardoinoen
     arduino = serial.Serial(port='COM3', baudrate=115200, timeout=.1)
+    # waits for 2 sec
+    time.sleep(2)
     # sends the coordinates to ardoino code in utf-8 encoding
     arduino.write(coordinates.encode("utf-8"))
-    # waits for 2 sec
-    time.sleep(10)
+
     # closes port
     arduino.close()
     return
 
 
 if __name__ == "__main__":
-    boxes = file_to_listing("shelfB.txt")
+    boxes = file_to_listing("Hylle_vol2.txt")
     #print(boxes)
     part = asking_for_part(boxes)
     print(part)
