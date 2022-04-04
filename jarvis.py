@@ -8,28 +8,38 @@ from pytesseract import Output
 def empty(a):
     pass
 
-'''
-frameWidth = 640
-frameHeight = 480
+
+frameWidth = 4608
+frameHeight = 2240
 
 cap = cv2.VideoCapture(0)
 cap.set(3, frameWidth)
 cap.set(4, frameHeight)
 cap.set(10,130)
-'''
+
+
+
 cv2.namedWindow("TrackBars")
 cv2.resizeWindow("TrackBars",630,240)
 cv2.createTrackbar("Hue Min","TrackBars",0,179,empty)
 cv2.createTrackbar("Hue Max","TrackBars",179,179,empty)
 cv2.createTrackbar("Sat Min","TrackBars",0,255,empty)
-cv2.createTrackbar("Sat Max","TrackBars",44,255,empty)
-cv2.createTrackbar("Val Min","TrackBars",181,255,empty)
-cv2.createTrackbar("Val Max","TrackBars",255,255,empty)
+cv2.createTrackbar("Sat Max","TrackBars",33,255,empty)
+cv2.createTrackbar("Val Min","TrackBars",141,255,empty)
+cv2.createTrackbar("Val Max","TrackBars",241,255,empty)
 
 while True:
-    img = cv2.imread('test_skuff.jpg')
+    '''
+    img = cv2.imread('hylle.jpg')
+    down_width = 1000
+    down_height = 800
+    down_points = (down_width, down_height)
+    img = cv2.resize(img, down_points, interpolation= cv2.INTER_LINEAR)
+    '''
+    success, img = cap.read()
     imgGray = cv2.cvtColor(img,cv2.COLOR_BGR2GRAY)
     imgHSV = cv2.cvtColor(img, cv2.COLOR_BGR2HSV)
+    
     h_min = cv2.getTrackbarPos("Hue Min", "TrackBars")
     h_max = cv2.getTrackbarPos("Hue Max", "TrackBars")
     s_min = cv2.getTrackbarPos("Sat Min", "TrackBars")
@@ -76,14 +86,15 @@ while True:
     #cv2.imshow("VideoTrack", imgTrack)
 
     if cv2.waitKey(1) & 0xFF ==ord('q'):
+        cv2.imwrite('test_pp.jpg', img)
         break
 
 #after prosessing
-
+'''
     imgBlur = cv2.GaussianBlur(imgResult,(7,7),0)
 
     cv2.imwrite('test_pp.jpg',imgBlur)
-
+'''
 
     
 #corner detection
