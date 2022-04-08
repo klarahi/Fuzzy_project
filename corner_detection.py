@@ -7,7 +7,7 @@ from matplotlib import pyplot as plt
 number_signs = 4
 number_corners = 4 * number_signs
 
-img = cv.imread('simple_shelf.jpg')
+img = cv.imread('pictures_reading_lables/simple_shelf.jpg')
 gray = cv.cvtColor(img,cv.COLOR_BGR2GRAY)
 corners = cv.goodFeaturesToTrack(gray,30,0.01,120)
 corners = np.int0(corners)

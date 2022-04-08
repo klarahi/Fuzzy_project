@@ -18,9 +18,10 @@ if __name__ == '__main__':
     # Defining paths to tesseract.exe
     # and the image we would be using
     path_to_tesseract = r"C:\Program Files\Tesseract-OCR\tesseract.exe"
-    image_path_1 = r"C:\Users\klmh\OneDrive\Dokumente\NTNU\TMM4245_Fuzzy_Front_End\proto_picture_4lables.jpg"
-    image_path_2 = r"C:\Users\klmh\OneDrive\Dokumente\NTNU\TMM4245_Fuzzy_Front_End\proto_picture_1lable.jpg"
-    image_path_3 = r"C:\Users\klmh\OneDrive\Dokumente\NTNU\TMM4245_Fuzzy_Front_End\proto_picture_board.jpg"
+    image_4_labels = r"C:\Users\klmh\OneDrive\Dokumente\NTNU\TMM4245_Fuzzy_Front_End\Fuzzy_project\pictures_reading_lables\proto_picture_4lables.jpg"
+    image_1_label = r"C:\Users\klmh\OneDrive\Dokumente\NTNU\TMM4245_Fuzzy_Front_End\Fuzzy_project\pictures_reading_lables\proto_picture_1lable.jpg"
+    image_boars_with_labels = r"C:\Users\klmh\OneDrive\Dokumente\NTNU\TMM4245_Fuzzy_Front_End\Fuzzy_project\pictures_reading_lables\proto_picture_board.jpg"
+    image_4_simpel_signs = "pictures_reading_lables\simple_shelf.jpg"
 
     # Mention the installed location of Tesseract-OCR in your system
     pytesseract.tesseract_cmd = path_to_tesseract
@@ -29,7 +30,7 @@ if __name__ == '__main__':
     '''# Opening the image & storing it in an image object
     img = Image.open(image_path)'''
     # Read image from which text needs to be extracted
-    img = cv2.imread(image_path_1)
+    img = cv2.imread(image_4_labels)
 
 
     # Preprocessing the image starts
