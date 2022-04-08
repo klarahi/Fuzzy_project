@@ -22,6 +22,7 @@ def file_to_listing(filepath: str) -> list:
             coordinates = infos[0] + '\n'
             boxes.append((name, coordinates))
     return boxes
+
 import speech_recognition as sr
 import sounddevice as sd
 from scipy.io.wavfile import write
@@ -92,6 +93,7 @@ def asking_for_part(boxes: list) -> str:
     if found == 0:
         print("part not found")
     return coordinates_part
+
 def coordinates_to_arduino(coordinates: str) -> None:
     # opens the connection to ardoinoen
     arduino = serial.Serial(port='COM5', baudrate=115200, timeout=.1)
@@ -102,6 +104,7 @@ def coordinates_to_arduino(coordinates: str) -> None:
     # closes port
     arduino.close()
     return
+
 if __name__ == "__main__":
     boxes = file_to_listing("Hylle_vol2.txt")
     #print(boxes)
